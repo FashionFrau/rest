@@ -1,6 +1,4 @@
-package hello;
-
-/**
+package app; /**
  * Created by tenaz3 on 18.05.17.
  */
 
@@ -12,4 +10,5 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 	public static void main(String[] args) {
 		SpringApplication.run(Application.class, args);
 	}
+
 }
