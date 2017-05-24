@@ -1,4 +1,4 @@
-package app; /**
+package com.fashionfrau; /**
  * Created by tenaz3 on 18.05.17.
  */
 
