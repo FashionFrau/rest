@@ -2,8 +2,8 @@ package com.fashionfrau.security.model;
 
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 
-/**
- * Created by tenaz3 on 20.05.17.
+/*
+  Created by tenaz3 on 20.05.17.
  */
 
 /**
@@ -15,7 +15,7 @@ public class JwtAuthenticationToken extends UsernamePasswordAuthenticationToken 
 	private final String jwtAccessToken;
 
 	public JwtAuthenticationToken(String jwtAccessToken) {
-		super(null,null);
+		super(null, null);
 		this.jwtAccessToken = jwtAccessToken;
 	}
 

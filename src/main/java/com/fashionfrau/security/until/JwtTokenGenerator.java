@@ -1,12 +1,9 @@
 package com.fashionfrau.security.until;
 
-import com.fashionfrau.security.config.JwtConfig;
 import com.fashionfrau.security.transfer.JwtUserDto;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 
 /**
  * Created by tenaz3 on 20.05.17.

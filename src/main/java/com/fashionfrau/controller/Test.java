@@ -11,10 +11,7 @@ import javax.ws.rs.core.Response;
  * Created by tenaz3 on 22.05.17.
  */
 @Component public class Test {
-	@GET
-	@Path("/test")
-	@Produces("application/json")
-	public Response test() {
+	@GET @Path("/test") @Produces("application/json") public Response test() {
 		return Response.ok("AA").build();
 	}
 }

@@ -1,6 +1,5 @@
 package com.fashionfrau.security.until;
 
-import com.fashionfrau.controller.AuthInstagramController;
 import com.fashionfrau.security.transfer.JwtUserDto;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.JwtException;

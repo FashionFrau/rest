@@ -1,5 +1,5 @@
-package com.fashionfrau; /**
- * Created by tenaz3 on 18.05.17.
+package com.fashionfrau; /*
+  Created by tenaz3 on 18.05.17.
  */
 
 import org.springframework.boot.SpringApplication;

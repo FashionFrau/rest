@@ -16,8 +16,7 @@ import java.io.Serializable;
 
 // Since our API only 'speaks' REST we give a HTTP 401 if user cannot be authenticated. There is no login page top redirect to.
 
-@Component
-public class JwtAuthenticationEntryPoint implements AuthenticationEntryPoint, Serializable {
+@Component public class JwtAuthenticationEntryPoint implements AuthenticationEntryPoint, Serializable {
 	@Override public void commence(HttpServletRequest request, HttpServletResponse response,
 			AuthenticationException authException) throws IOException, ServletException {
 

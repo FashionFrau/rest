@@ -1,7 +1,5 @@
 package com.fashionfrau.security.transfer;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
 /**
  * Created by tenaz3 on 20.05.17.
  */
