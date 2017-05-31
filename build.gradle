@@ -1,16 +1,14 @@
 buildscript {
+    ext {
+        springBootVersion = '1.5.3.RELEASE'
+    }
     repositories {
         mavenCentral()
     }
     dependencies {
-        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.5.2.RELEASE")
-
-        classpath("com.sachinhandiekar:jInstagram:1.1.9")
-
-//        classpath("org.springframework.boot:spring-boot-starter-security")
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
     }
 }
-
 
 version '1.0-SNAPSHOT'
 
@@ -24,9 +22,20 @@ jar {
 }
 
 sourceCompatibility = 1.8
+targetCompatibility = 1.8
 
 repositories {
     mavenCentral()
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '3.5'
+}
+
+ext {
+    jInstagramVersion = '1.1.9'
+    jjwtVersion = '0.7.0'
+    junitVersion = '4.12'
 }
 
 dependencies {
@@ -36,12 +45,13 @@ dependencies {
 
     compile("org.springframework.boot:spring-boot-starter-jersey")
 
-    compile("com.sachinhandiekar:jInstagram:1.1.9")
+    compile("com.sachinhandiekar:jInstagram:${jInstagramVersion}")
 
     compile("org.springframework.boot:spring-boot-starter-security")
 
-    compile("io.jsonwebtoken:jjwt:0.7.0")
+    compile("io.jsonwebtoken:jjwt:${jjwtVersion}")
 
     testCompile('org.springframework.boot:spring-boot-starter-test')
-    testCompile group: 'junit', name: 'junit', version: '4.12'
+
+    testCompile("junit:junit:${junitVersion}")
 }
