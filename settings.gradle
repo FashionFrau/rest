@@ -1,2 +1,6 @@
 rootProject.name = 'fashionfrau'
 
+include 'application'
+include 'application:configuration'
+include 'application:api'
+

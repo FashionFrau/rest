@@ -1,0 +1,13 @@
+#jwt:
+#  header: X-Authorization-FashionFrau
+#  secret: 8557761ed39c3a9b33e7d124746859c25dfed1f7c6f20294f33029270c18f925dae1caa12f68d527530a3dd9a0997c895bd309a8144c79c42457979db333ff9d
+logging:
+  level:
+    org.springframework.security: DEBUG
+spring:
+  resources:
+    chain:
+      enabled: true
+management:
+  security:
+    enabled: true # set to false to disable 'default' Spring Boot security

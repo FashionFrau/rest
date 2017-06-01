@@ -1,0 +1,14 @@
+springBoot {
+    mainClass = 'com.fashionfrau.Application'
+
+    buildInfo {
+        additionalProperties = [
+                'description': "${description}"
+        ]
+    }
+}
+
+// Make the System.properties available in the bootRun task.
+bootRun {
+    systemProperties = System.properties
+}
