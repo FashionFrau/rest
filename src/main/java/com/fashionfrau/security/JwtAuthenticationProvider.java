@@ -1,9 +1,9 @@
 package com.fashionfrau.security;
 
+import com.fashionfrau.security.dto.JwtUser;
 import com.fashionfrau.security.exception.JwtTokenMalformedException;
 import com.fashionfrau.security.model.AuthenticatedUser;
 import com.fashionfrau.security.model.JwtAuthenticationToken;
-import com.fashionfrau.security.transfer.JwtUserDto;
 import com.fashionfrau.security.until.JwtTokenValidator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -37,7 +37,7 @@ import java.util.List;
 
 		String jwtAccessToken = jwtAuthenticationToken.getJwtAccessToken();
 
-		final JwtUserDto jwtUserDto = jwtTokenValidator.parseToken(jwtAccessToken);
+		final JwtUser jwtUserDto = jwtTokenValidator.parseToken(jwtAccessToken);
 
 		if (jwtUserDto == null) {
 			throw new JwtTokenMalformedException("JWT token is not valid");

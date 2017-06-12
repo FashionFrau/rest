@@ -28,7 +28,9 @@ public class JwtAuthenticationTokenFilter extends AbstractAuthenticationProcessi
 	}
 
 	@Override protected boolean requiresAuthentication(HttpServletRequest request, HttpServletResponse response) {
-		if (request.getPathInfo().matches("/auth/callback")) {
+		final String pathInfo = request.getPathInfo();
+
+		if (pathInfo != null && "/auth/callback".matches(pathInfo)) {
 			return false;
 		}
 		return super.requiresAuthentication(request, response);

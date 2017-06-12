@@ -1,6 +1,6 @@
 package com.fashionfrau.security.until;
 
-import com.fashionfrau.security.transfer.JwtUserDto;
+import com.fashionfrau.security.dto.JwtUser;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
@@ -17,7 +17,7 @@ public class JwtTokenGenerator {
 	 * Generates a JWT token containing username as subject, and userId and role as additional claims. These properties are taken from the specified
 	 * User object. Tokens validity is infinite.
 	 */
-	public static String generateToken(JwtUserDto user, String secret) {
+	public static String generateToken(JwtUser user, String secret) {
 
 		Claims claims = Jwts.claims().setSubject(user.getUsername());
 		claims.put("userId", user.getId() + "");

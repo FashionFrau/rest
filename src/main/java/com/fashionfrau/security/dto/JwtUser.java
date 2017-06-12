@@ -1,4 +1,4 @@
-package com.fashionfrau.security.transfer;
+package com.fashionfrau.security.dto;
 
 /**
  * Created by tenaz3 on 20.05.17.
@@ -6,7 +6,7 @@ package com.fashionfrau.security.transfer;
 
 //Simple placeholder for info extracted from the JWT
 
-public class JwtUserDto {
+public class JwtUser {
 
 	private String id;
 

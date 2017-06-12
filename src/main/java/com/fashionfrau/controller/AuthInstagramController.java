@@ -1,7 +1,7 @@
 package com.fashionfrau.controller;
 
 import com.fashionfrau.security.config.JwtConfig;
-import com.fashionfrau.security.transfer.JwtUserDto;
+import com.fashionfrau.security.dto.JwtUser;
 import com.fashionfrau.security.until.JwtTokenGenerator;
 import org.jinstagram.InstagramClient;
 import org.jinstagram.auth.InstagramAuthService;
@@ -49,7 +49,7 @@ import javax.ws.rs.core.Response;
 
 		UserInfo info = instagram.getCurrentUserInfo();
 
-		JwtUserDto user = new JwtUserDto();
+		JwtUser user = new JwtUser();
 		user.setId(info.getData().getId());
 		user.setUsername(info.getData().getUsername());
 		user.setRole("user");

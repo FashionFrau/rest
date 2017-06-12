@@ -34,17 +34,15 @@ import java.util.Arrays;
 	}
 
 	@Override protected void configure(HttpSecurity http) throws Exception {
-		http
-				// we don't need CSRF because our token is invulnerable
-				.csrf().disable().authorizeRequests().antMatchers("/api/auth/callback").permitAll().anyRequest()
-				.authenticated().and()
+		// Custom JWT based security filter
+		http.addFilterBefore(authenticationTokenFilterBean(), UsernamePasswordAuthenticationFilter.class);
+
+		http.csrf().disable().authorizeRequests().antMatchers("/api/auth/callback").permitAll().
+				anyRequest().authenticated().and()
 				// Call our errorHandler if authentication/authorisation fails
 				.exceptionHandling().authenticationEntryPoint(unauthorizedHandler).and()
 				// don't create session
-				.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS); //.and()
-
-		// Custom JWT based security filter
-		http.addFilterBefore(authenticationTokenFilterBean(), UsernamePasswordAuthenticationFilter.class);
+				.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
 
 		// disable page caching
 		http.headers().cacheControl();

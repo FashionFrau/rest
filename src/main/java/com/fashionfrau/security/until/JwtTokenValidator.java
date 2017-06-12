@@ -1,6 +1,6 @@
 package com.fashionfrau.security.until;
 
-import com.fashionfrau.security.transfer.JwtUserDto;
+import com.fashionfrau.security.dto.JwtUser;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.JwtException;
 import io.jsonwebtoken.Jwts;
@@ -26,13 +26,13 @@ import org.springframework.stereotype.Component;
 	 * @param token the JWT token to parse
 	 * @return the User object extracted from specified token or null if a token is invalid.
 	 */
-	public JwtUserDto parseToken(String token) {
-		JwtUserDto user = null;
+	public JwtUser parseToken(String token) {
+		JwtUser user = null;
 
 		try {
 			Claims body = Jwts.parser().setSigningKey(secret).parseClaimsJws(token).getBody();
 
-			user = new JwtUserDto();
+			user = new JwtUser();
 			user.setUsername(body.getSubject());
 			user.setId((String) body.get("userId"));
 			user.setRole((String) body.get("role"));
