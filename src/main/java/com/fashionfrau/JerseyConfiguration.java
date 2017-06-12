@@ -1,6 +1,6 @@
 package com.fashionfrau;
 
-import com.fashionfrau.controller.AuthInstagramController;
+import com.fashionfrau.instagram.controller.AuthInstagramController;
 import org.glassfish.jersey.server.ResourceConfig;
 import org.springframework.context.annotation.Configuration;
 
