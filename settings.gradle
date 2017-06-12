@@ -1,2 +1,5 @@
 rootProject.name = 'fashionfrau'
 
+include 'instagram'
+include 'api'
+include 'configuration'
