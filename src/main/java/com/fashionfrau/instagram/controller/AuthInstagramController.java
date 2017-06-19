@@ -14,6 +14,7 @@ import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
+import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
 /**
@@ -27,7 +28,7 @@ import javax.ws.rs.core.Response;
 
 	@Autowired JwtUserService jwtUserService;
 
-	@GET @Produces("application/json") @Path("/callback") public Response callback(@QueryParam("code") String code)
+	@GET @Produces(MediaType.APPLICATION_JSON) @Path("/callback") public Response callback(@QueryParam("code") String code)
 			throws InstagramException {
 
 		final UserInfo userInfo = instaService.authenticate(code);
